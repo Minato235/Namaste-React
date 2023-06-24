@@ -1,5 +1,5 @@
 npm init-way to install devDependencies,Dependencies
-npm i -D  parcel-bundler
+npm i -D  parcel(development build)
 parcel uses babel and needs lot of Dependencies
 npm install-will install node_modules
 npx->excuting pakage
@@ -9,8 +9,20 @@ npm i react && npm i react-Dom
 import React from "react";
 import reactDom from "react-dom"; in (app.js)
 normal js file didt had a imports , so we needto add type=module
-#parcel=>
+remove   "main": "App.js",
+
+#parcel(bundler)=>
 Dev Build
 Local Server
 HMR-hot module Relacement(it works like live server )
 File Watching Algoritham-written c++(when we save it will build again)
+Caching(.parcel-cache)-Faster builds
+Image optimization
+Manification
+Bundling
+Compressing
+Diff Bundling-(we can config browser version)
+works on https 
+Tree Shaking-remove unused code for u
+
+npx parcel build index.html(making production ready and do the things && create new dist folder)
