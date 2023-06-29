@@ -26,3 +26,8 @@ works on https
 Tree Shaking-remove unused code for u
 npx parcel index.html (development)
 npx parcel build index.html(making production ready and do the things && create new dist folder)
+//using react(! development friendly)
+// const heading = React.createElement("h1", { id: "heading" }, "Namaste React");
+//jsx=>HTML-Like syntax(tranplied before it reaches the js engine)
+if we are giving jsx attribute we need to give it in camelCase
+// tranplied by parcel with help of babel
