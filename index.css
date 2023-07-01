@@ -1,3 +1,18 @@
-#root{
-    color: blue;
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid;
+  padding: 5px 20px;
+}
+.logo {
+  width: 200px;
+}
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 20px;
+}
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10;
 }
