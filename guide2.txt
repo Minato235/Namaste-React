@@ -1,3 +1,4 @@
 Episode 4=>
 props-passing arguments to functions
 config-driven Ui-we can config ui depends on location(city,county etc)
+always use map and keep key in map(react index is bad practice)

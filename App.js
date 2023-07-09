@@ -1517,7 +1517,7 @@ resList = [
 ];
 const RestroCard = (props) => {
   const { resData } = props;
-  const { name, cuisines, avgRating, costForTwo, deliveryTime } = resData?.data;
+  const { name, cuisines, avgRating, costForTwo, deliveryTime,id } = resData?.data;
   return (
     <div className="res-card" style={styleCard}>
       <img
@@ -1541,7 +1541,7 @@ const Body = () => {
          {/* <RestroCard resData={resList[0]}></RestroCard>
         <RestroCard resData={resList[1]}></RestroCard> */}
         {resList.map((restaurant) => (
-          <RestroCard resData={restaurant} />
+          <RestroCard key={restaurant.data.id} resData={restaurant} />
         ))}
       </div>
     </div>
