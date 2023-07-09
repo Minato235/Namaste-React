@@ -1538,6 +1538,8 @@ const Body = () => {
     <div className="body">
       <div className="Search">Search</div>
       <div className="res-container">
+         {/* <RestroCard resData={resList[0]}></RestroCard>
+        <RestroCard resData={resList[1]}></RestroCard> */}
         {resList.map((restaurant) => (
           <RestroCard resData={restaurant} />
         ))}
