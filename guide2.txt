@@ -2,3 +2,15 @@ Episode 4=>
 props-passing arguments to functions
 config-driven Ui-we can config ui depends on location(city,county etc)
 always use map and keep key in map(react index is bad practice)
+virtual dom-is not real dom its a representaion of dom
+reconliation uses diff algo and compares virtual dom and acutal dom then updates what need to be changed and 
+just updates  and renders that part  not all
+why we use keys?=>suppose we have 4 div without keys then we put 5th div react renders everything,
+we we keep keys then react renders only th div
+Tree-virtual representaion(ex:html)
+diff algo=>
+react fiber;
+
+export->we can do multiple componenets {}
+import=>we only do default i mean 1;
+we can do both default and import same time Header,{Title}
