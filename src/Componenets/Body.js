@@ -1,17 +1,31 @@
 import RestroCard from "./RestroCard";
-import {resList} from "../util/data"
+import { useState } from "react";
+import { resList } from "../util/data";
+
 const Body = () => {
-    return (
-      <div className="body">
-        <div className="Search">Search</div>
-        <div className="res-container">
-          {/* <RestroCard resData={resList[0]}></RestroCard>
-          <RestroCard resData={resList[1]}></RestroCard> */}
-          {resList.map((restaurant) => (
-            <RestroCard key={restaurant.data.id} resData={restaurant} />
-          ))}
-        </div>
+  const [listOfRestro, setListOfRestro] = useState(resList);
+  return (
+    <div className="body">
+      <div className="Search">Search</div>
+      <div>
+        <button
+          className="filter-btn"
+          onClick={() => {
+            const filterOut = listOfRestro.filter(
+              (res) => res.data.avgRating > 4.0
+            );
+            setListOfRestro(filterOut);
+          }}
+        >
+          Top Rated Restros
+        </button>
       </div>
-    );
-  };
-  export default Body;
+      <div className="res-container">
+        {listOfRestro.map((restaurant) => (
+          <RestroCard key={restaurant.data.id} resData={restaurant} />
+        ))}
+      </div>
+    </div>
+  );
+};
+export default Body;

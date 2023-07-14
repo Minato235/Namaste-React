@@ -2,15 +2,34 @@ Episode 4=>
 props-passing arguments to functions
 config-driven Ui-we can config ui depends on location(city,county etc)
 always use map and keep key in map(react index is bad practice)
-virtual dom-is not real dom its a representaion of dom
+virtual dom-is not real dom(obj) its a representaion of dom
 reconliation uses diff algo and compares virtual dom and acutal dom then updates what need to be changed and 
 just updates  and renders that part  not all
 why we use keys?=>suppose we have 4 div without keys then we put 5th div react renders everything,
 we we keep keys then react renders only th div
 Tree-virtual representaion(ex:html)
+===============>(1.45hr,hooked)
 diff algo=>
-react fiber;
+findouts diff between previous(old) and (new) virtual doms ,
+calculate then updates actual dom every render cycles
+(new reconliation react 16)react fiber;
+
 
 export->we can do multiple componenets {}
 import=>we only do default i mean 1;
 we can do both default and import same time Header,{Title}
+
+React fast beacuse it can do Fast dom manuplation
+================================>
+React-Hooks=>
+they are normal js utility functions,they wrote inside react folder
+Two important Hooks=>
+-useState()==>
+firstly we need to import using name import
+(import { useState } from "react";)
+when ever state variable updates react rerender its componenets
+  const [listOfRestro, setListOfRestro] = useState(resList); Like
+const [listOfRestro, setListOfRestro]=arr;
+arr[0]=listOfRestro;
+arr[0]=setListOfRestro;
+-useEffect()
