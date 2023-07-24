@@ -32,4 +32,18 @@ when ever state variable updates react rerender its componenets
 const [listOfRestro, setListOfRestro]=arr;
 arr[0]=listOfRestro;
 arr[0]=setListOfRestro;
--useEffect()
+
+Episode -6
+19-time=>>
+1)Loads=>Api=>Body-Render
+2)Loads=>Body-render=>
+api(fetch data in useEffect)=>
+render(we use 2nd in react,better Ux)
+-useEffect()===>consist of cb and array
+useEffect(()=>{
+  console.log("Use efferct called")
+},[])
+fetch=>its superpower given by js Engine
+cors-error=>our browsers stopping us from calling one origin(Swiggy api) to other origin(localhost)
+
+Shimmer Ui-showing pake things like orginals
