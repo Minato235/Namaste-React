@@ -1,0 +1,11 @@
+useEffect==========================>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+it called using 2 arguments 1 is cb and other is dependency array
+useEffect(()=>{
+  console.log("In CB")
+},[dependesy array])
+
+if i keep useEffect in Header componenet:>>>>>>>>everytime Header Componenet renders useEffect called
+if no dependency array:>>useEffect called every render useEffect(()=>{})
+if dependency array emptiy[]::=>it will call only firsttime
+if dependency array !emptiy[!emptiy]::=>it will call everytime !emptiy
