@@ -45,3 +45,6 @@
   display: flex;
   flex-wrap: wrap;
 }
+.about{
+  background-color: blue;
+}
