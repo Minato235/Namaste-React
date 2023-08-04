@@ -1,5 +1,6 @@
 import { urlsId } from "../util/urls";
 const RestroCard = (props) => {
+  console.log(props)
   const styleCard = {
     backgroundColor: "#0f0f0",
   };
@@ -12,7 +13,7 @@ const RestroCard = (props) => {
     costForTwo,
     deliveryTime,
     id
-  } = resData?.data;
+  } = resData;
   return (
     <div className="res-card" style={styleCard}>
       <img className="res-logo" src={urlsId + cloudinaryImageId}></img>

@@ -2,37 +2,42 @@ import RestroCard from "./RestroCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 
-import { resList } from "../util/data";
+// import { resList } from "../util/data";
 
 const Body = () => {
-  const [listOfRestro, setListOfRestro] = useState(resList);
-  const [listOfRestro1, setListOfRestro1] = useState(resList);
+  const [listOfRestro, setListOfRestro] = useState([]);
+  const [listOfRestro1, setListOfRestro1] = useState([]);
 
   const [searchText, setSearchText] = useState("");
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  // const fetchData = async () => {
-  //   const data = await fetch(
-  //     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.3569462&lng=78.6682395&page_type=DESKTOP_WEB_LISTING"
-  //   );
-  //   const json = await data.json();
-
-  //   // console.log(json);
-
-  //   setListOfRestro(json?.data?.cards[0]?.data?.data?.cards);
-  // };
-  if (listOfRestro.length === 0) {
-    return (
-      <h1>
-        <Shimmer />
-      </h1>
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.3569462&lng=78.6682395&page_type=DESKTOP_WEB_LISTING"
     );
-  }
+    const json = await data.json();
+
+    console.log(json);
+    console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+
+    setListOfRestro(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setListOfRestro1(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+  };
+  // if (listOfRestro.length == 0) {
+  //   return (
+  //     <h1>
+  //       <Shimmer />
+  //     </h1>
+  //   );
+  // }
   return (
-    <div className="body"><br></br>
+    <div className="body">
+      <br></br>
       <div className="search">
         <input
           type="text"
@@ -46,17 +51,17 @@ const Body = () => {
       <button
         onClick={() => {
           console.log(searchText);
-          const filterSearch=listOfRestro.filter((res)=>
-          res.data.name.toLowerCase().includes(searchText.toLowerCase())
-          )
-          setListOfRestro1(filterSearch)
+          const filterSearch = listOfRestro.filter((res) =>
+            res.data.name.toLowerCase().includes(searchText.toLowerCase())
+          );
+          setListOfRestro1(filterSearch);
         }}
       >
         search
       </button>
-      
+
       <div>
-      <br></br>
+        <br></br>
         <button
           className="filter-btn"
           onClick={() => {
@@ -71,8 +76,9 @@ const Body = () => {
       </div>
       <div className="res-container">
         {listOfRestro1.map((restaurant) => (
-          <RestroCard key={restaurant.data.id} resData={restaurant} />
+          <RestroCard key={restaurant?.info?.id} resData={restaurant?.info} />
         ))}
+        
       </div>
     </div>
   );
