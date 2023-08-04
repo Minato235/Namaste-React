@@ -20,21 +20,21 @@ const Body = () => {
     );
     const json = await data.json();
 
-    console.log(json);
-    console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    // console.log(json);
+    // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
 
     setListOfRestro(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setListOfRestro1(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
   };
-  // if (listOfRestro.length == 0) {
-  //   return (
-  //     <h1>
-  //       <Shimmer />
-  //     </h1>
-  //   );
-  // }
+  if (listOfRestro.length == 0) {
+    return (
+      <h1>
+        <Shimmer />
+      </h1>
+    );
+  }
   return (
     <div className="body">
       <br></br>

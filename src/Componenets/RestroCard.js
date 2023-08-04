@@ -1,6 +1,6 @@
 import { urlsId } from "../util/urls";
 const RestroCard = (props) => {
-  console.log(props)
+  // console.log(props)
   const styleCard = {
     backgroundColor: "#0f0f0",
   };
