@@ -13,3 +13,9 @@ if dependency array !emptiy[!emptiy]::=>it will call everytime !emptiy
 Lib=>>>>>>>>>>>>>>>
 import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import { useRouteError } from "react-router-dom";========>Hook which used to display  error part in componenets 
+import { Link } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
+#2 types of Routing 
+1)CLient side
+2)server side
