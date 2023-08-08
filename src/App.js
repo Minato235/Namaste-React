@@ -7,7 +7,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import About from "./Componenets/About";
 import Contact from "./Componenets/Contact";
 import Error from "./Componenets/Error";
-import Rest from "./Componenets/Rest";
+import Rest from "./Componenets/RestMenu";
 const AppLayout = () => {
   return (
     <>
