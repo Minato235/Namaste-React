@@ -5,8 +5,7 @@ import { menuUrl, urlsId } from "../util/urls";
 
 const RestMenu = () => {
   const [resInfo, setResInfo] = useState(null);
-  const resid =useParams();
-  console.log(resid)
+  const {resid} =useParams();
 
   useEffect(() => {
     fetchMenu();
@@ -22,14 +21,14 @@ const RestMenu = () => {
       console.error("Error fetching menu:", error);
     }
   };
+  console.log(resInfo)
+  if(resInfo === null) return <Shimmer/>
 
   const restaurantInfo = resInfo?.cards[0]?.card?.card?.info;
   console.log(restaurantInfo)
   const itemCards = resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
-  const itemCards1 = resInfo?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards;
 
-  console.log(resInfo)
-  if(resInfo === null) return <Shimmer/>
+ 
 
   return  (
     <div className="menu">

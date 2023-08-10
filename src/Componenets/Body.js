@@ -28,7 +28,7 @@ const Body = () => {
     setListOfRestro1(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
   };
-  if (listOfRestro.length == 0) {
+  if (listOfRestro.length === 0) {
     return (
       <h1>
         <Shimmer />
