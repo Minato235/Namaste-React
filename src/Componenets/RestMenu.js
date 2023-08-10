@@ -6,6 +6,7 @@ import { menuUrl, urlsId } from "../util/urls";
 const RestMenu = () => {
   const [resInfo, setResInfo] = useState(null);
   const {resid} =useParams();
+  
 
   useEffect(() => {
     fetchMenu();
@@ -13,7 +14,8 @@ const RestMenu = () => {
 
   const fetchMenu = async () => {
     try {
-      const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.3569462&lng=78.6682395&restaurantId=544932");
+      const urlId=resid;
+      const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.3569462&lng=78.6682395&restaurantId="+urlId);
       const json = await data.json();
       console.log(json);
       setResInfo(json.data);
