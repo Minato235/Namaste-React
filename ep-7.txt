@@ -20,3 +20,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 1)CLient side
 2)server side
 1.09
+
+Optional chaining=>>>>>>>>
+Optional chaining is particularly useful when working with data from APIs,
+ handling user input, or accessing deeply nested properties where you want to gracefully handle cases where properties might not exis
