@@ -1,6 +1,8 @@
 import RestroCard from "./RestroCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
+//Link will not refersh our page
 
 // import { resList } from "../util/data";
 
@@ -23,10 +25,12 @@ const Body = () => {
     // console.log(json);
     // console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
-
-    setListOfRestro(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setListOfRestro1(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-
+    setListOfRestro(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setListOfRestro1(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
   if (listOfRestro.length === 0) {
     return (
@@ -44,6 +48,7 @@ const Body = () => {
           className="search-box"
           value={searchText}
           onChange={(e) => {
+            console.log(e.target.value);
             setSearchText(e.target.value);
           }}
         ></input>
@@ -76,9 +81,11 @@ const Body = () => {
       </div>
       <div className="res-container">
         {listOfRestro1.map((restaurant) => (
-          <RestroCard key={restaurant?.info?.id} resData={restaurant?.info} />
+          <Link key={restaurant?.info?.id}
+           to={"/rest/" + restaurant?.info?.id}>
+            <RestroCard resData={restaurant?.info} />
+          </Link>
         ))}
-        
       </div>
     </div>
   );
