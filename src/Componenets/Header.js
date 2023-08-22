@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
         <img className="logo" src={logoUrl}></img>
       </div>
       <div className="nav-items">
-        <ul>
+        <ul className="three">
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/contact">Contact Us</Link></li>
