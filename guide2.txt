@@ -35,7 +35,7 @@ arr[0]=setListOfRestro;
 
 Episode -6
 19-time=>>
-1)Loads=>Api=>Body-Render
+1)Loads=>Api=>Body-Render(react)
 2)Loads=>Body-render=>
 api(fetch data in useEffect)=>
 render(we use 2nd in react,better Ux)
